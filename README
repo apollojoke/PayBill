@@ -1,4 +1,8 @@
-This is your new Play application
+Pay Bill
+
+你和你的小伙伴去吃饭，吃着火锅唱着歌，忽然，服务员让买单。。。。
+
+你将使用Pay Bill来记录小伙伴们一次活动的消费记录。无论谁垫付谁没带钱，结束后可以生成一个账单，谁该给谁多少钱,一目了然。
+
 =====================================
-Here is Yaxuan
-This file will be packaged with your application, when using `play dist`.
+Here is Jun Lee, Yaxuan Zhang, Jia Lou
