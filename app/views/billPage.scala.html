@@ -1,0 +1,35 @@
+@(bill : Bill)
+
+<!DOCTYPE html>
+
+<html lang="en" ng-app>
+    <head>
+        <title>Bill</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/angular.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+        <h1>{{bill.getBillName}}</h1>
+
+        @*<table style="width:300px">*@
+            @*<tr>*@
+                @*<td>Partner</td>*@
+                @*<td>paid</td>*@
+                @*<td>should pay</td>*@
+            @*</tr>*@
+            @*<tr ng-repeat="record in records | orderBy:orderProp">*@
+                @*<td><img ng-src="{{record.imgUrl}}" ></td>*@
+                @*<td>{{record.paid}}</td>*@
+                @*<td>{{record.shouldPay}}</td>*@
+            @*</tr>*@
+        @*</table>*@
+
+        <ul>
+            <li><img ng-src="{{record.imgUrl}}" ></li>
+        </ul>
+
+        <button>show</button>
+    </body>
+</html>

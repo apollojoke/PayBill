@@ -14,8 +14,12 @@ public class Application extends Controller {
     static Form<ConsumptionRecord> recordForm = Form.form(ConsumptionRecord.class);
 
     public static Result index() {
-        Bill bill = new Bill();
-        return ok(index.render(bill, partnerForm, recordForm));
+        return TODO;
+    }
+
+    public static Result showBill() {
+        Bill bill = new Bill("new bill");
+        return ok(billPage.render(bill));
     }
 
     public static Result addPartner() {
