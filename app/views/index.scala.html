@@ -3,7 +3,7 @@
 @import helper._
 
 @main("PayBill"){
-    <h2>Add your little partners</h2>
+    <h2 xmlns="http://www.w3.org/1999/html">Add your little partners</h2>
     @form(routes.Application.addPartner()) {
         @inputText(partnerForm("Name"))
         <input type="submit" value="Add">
@@ -14,6 +14,19 @@
         <input type="submit" value="Add">
     }
 
-    <button>Show Bill</button>
+    <div class="bill">
+        <div class="bill-element title">
+            <div class="bill-image">
+                <button class="button"></button>
+            </div>
+            <div class="label">
+                <label> My Bills</label>
+            </div>
+        </div>
+        <div class="bill-element body">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+        </div>
+    </div>
 
 }
