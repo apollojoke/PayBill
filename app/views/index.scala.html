@@ -1,35 +1,3 @@
-@(bill: Bill, partnerForm: play.data.Form[Partner], recordForm: play.data.Form[ConsumptionRecord])
-
-@import helper._
-
 @main("PayBill"){
-    <p>test angularJS 1 + 2 = {{ 1 + 2 }}</p>
-    <h2>Add your little partners</h2>
-    @form(routes.Application.addPartner()) {
-        @inputText(partnerForm("Name"))
-        <input type="submit" value="Add">
-    }
-    <h2>Add a consumption</h2>
-    @form(routes.Application.addRecord()) {
-        @inputText(recordForm("amount"))
-        <input type="submit" value="Add">
-    }
-
-    <button>Show Bill</button>
-
-    <div class="bill">
-        <div class="bill-element title">
-            <div class="bill-image">
-                <button class="button"></button>
-            </div>
-            <div class="label">
-                <label> My Bills</label>
-            </div>
-        </div>
-        <div class="bill-element body">
-            <div class="item">item1</div>
-            <div class="item">item2</div>
-        </div>
-    </div>
-
+    <div ng-view></div>
 }

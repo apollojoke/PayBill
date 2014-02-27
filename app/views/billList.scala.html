@@ -1,0 +1,11 @@
+@main("Bill List"){
+    <h1>My bills</h1>
+    <div ng-controller="BillListCtrl">
+        <ul class="bills">
+            <li ng-repeat="bill in bills | orderBy:orderProp">
+                {{bill.name}}
+                <p>{{bill.payer}}</p>
+            </li>
+        </ul>
+    </div>
+}

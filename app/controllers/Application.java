@@ -4,9 +4,11 @@ import models.Bill;
 import models.ConsumptionRecord;
 import models.Partner;
 import play.data.Form;
-import play.mvc.*;
-
-import views.html.*;
+import play.mvc.Controller;
+import play.mvc.Result;
+import play.mvc.Results;
+import views.html.billList;
+import views.html.billPage;
 
 public class Application extends Controller {
 
@@ -14,7 +16,11 @@ public class Application extends Controller {
     static Form<ConsumptionRecord> recordForm = Form.form(ConsumptionRecord.class);
 
     public static Result index() {
-        return TODO;
+        return redirect(routes.Application.billList());
+    }
+
+    public static Result billList() {
+        return ok(billList.render());
     }
 
     public static Result showBill() {
