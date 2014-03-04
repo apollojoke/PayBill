@@ -1,0 +1,8 @@
+<h1>My bills</h1>
+<div>
+    <ul class="bills">
+        <li ng-repeat="bill in bills | orderBy:orderProp">
+            <a ng-href="#/billList/{{bill.id}}">{{bill.name}}</a>
+        </li>
+    </ul>
+</div>

@@ -1,12 +1,19 @@
-/**
- * Created by twer on 2/27/14.
- */
+var paybillControllers = angular.module('paybillControllers', []);
 
-function BillListCtrl($scope, $http) {
-    $http.get('/assets/bills/bills.json').success(function(data){
-        $scope.bills = data;
+paybillControllers.controller('BillListCtrl', ['$scope', '$http',
+    function ($scope, $http) {
+        $http.get('/assets/bills/bills.json').success(function(data){
+            $scope.bills = data;
+        });
+
+        $scope.orderProp = 'age';
+    }]);
+
+paybillControllers.controller('BillCtrl', ['$scope', '$routeParams', '$http',
+    function($scope, $routeParams, $http) {
+            $http.get('/assets/bills/' + $routeParams.billId + '.json').success(function(data){
+        $scope.bill = data;
     })
+    }]);
 
-    $scope.orderProp = 'age';
-}
 

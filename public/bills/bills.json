@@ -2,12 +2,14 @@
     {
         "age": 0,
         "name": "Thai",
+        "id": "Thai",
         "payer": "Louis",
         "cost": 2000
     },
     {
         "age": 1,
         "name": "Japan",
+        "id": "Japan",
         "payer": "Yaxuan",
         "cost": 1000
     }
