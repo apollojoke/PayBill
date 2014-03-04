@@ -16,6 +16,10 @@ billApp.config(['$routeProvider',
                 templateUrl: "assets/templetes/bill_page.html",
                 controller: 'BillCtrl'
             }).
+            when('/newBill', {
+                templateUrl: "assets/templetes/new_bill.html",
+                controller: 'CreateBillCtrl'
+            }).
             otherwise({
                 redirectTo: '/billList'
             });

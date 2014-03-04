@@ -1,8 +1,9 @@
-<h1>My bills</h1>
-<div>
-    <ul class="bills">
-        <li ng-repeat="bill in bills | orderBy:orderProp">
+<div class="title-bar">
+    <a ng-href="#/newBill"> <div class="add-button" id="add-bill"></div> </a>
+    <div class="title">My Bills</div>
+</div>
+    <ul class="nav nav-sidebar">
+        <li ng-repeat="bill in bills | orderBy:orderProp" class="bill-element"  >
             <a ng-href="#/billList/{{bill.id}}">{{bill.name}}</a>
         </li>
     </ul>
-</div>

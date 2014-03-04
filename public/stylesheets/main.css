@@ -1,53 +1,35 @@
-.bill {
+.container {
     position: absolute;
-    width: 250px;
-    height: 400px;
+    height: 100%;
+    width: 100%;
     background-color: gray;
 }
 
 .bill-element {
     background-color: white;
     border-radius: 6px;
-    width: 95%;
-    margin-left: 5px;
+    height: 180px;
 }
-.body {
+
+.title-bar {
     height: 200px;
-    margin-top: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #696969;
 }
 
-.title {
-    height: 50px;
-    margin-top: 10px
-}
-
-.bill-image {
-    float: left;
-}
-
-#label {
-    font-size: 18pt;
+.title{
+    font-size: 100px;
     color: #2a6496;
-    margin-top: 12px;
-    margin-left: 36px;
 }
 
-.button {
-    width: 50px;
-    height: 50px;
+.add-button {
+    width: 198px;
+    height: 198px;
     border: none;
     background-image: url(../images/add_icon.jpg);
     background-size: 100%;
+    float: left;
 }
-
-.item {
-    width: 95%;
-    height: 40px;
-    margin-left: 5px;
-    margin-top: 5px;
-    background-color: #C6E2FF;
-}
-
 
 .nav-sidebar {
     margin-right: 2px;
@@ -56,6 +38,7 @@
 .nav-sidebar > li > a {
     padding-right: 20px;
     padding-left: 20px;
+    font-size: 90px;
 }
 .nav-sidebar > .active > a {
     color: #fff;
