@@ -25,8 +25,11 @@
     float: left;
 }
 
-.label {
-    font-size: 20pt
+#label {
+    font-size: 18pt;
+    color: #2a6496;
+    margin-top: 12px;
+    margin-left: 36px;
 }
 
 .button {
@@ -43,4 +46,22 @@
     margin-left: 5px;
     margin-top: 5px;
     background-color: #C6E2FF;
+}
+
+
+.nav-sidebar {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #428bca;
+}
+
+.page-title {
+
 }

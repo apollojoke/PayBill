@@ -1,11 +1,19 @@
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
 @main("Bill List"){
-    <h1>My bills</h1>
-    <div ng-controller="BillListCtrl">
-        <ul class="bills">
-            <li ng-repeat="bill in bills | orderBy:orderProp">
-                {{bill.name}}
-                <p>{{bill.payer}}</p>
-            </li>
-        </ul>
+    <div class="bill">
+        <div class="bill-element title">
+            <div class="bill-image">
+                <button class="button"></button>
+            </div>
+            <div class="label">
+                <label id="label">My Bills</label>
+            </div>
+        </div>
+        <div class="bill-element body" ng-controller="BillListCtrl">
+            <ul class="nav nav-sidebar" ng-repeat="bill in bills | orderBy:orderProp">
+                <li><a href="#">{{bill.name}}</a></li>
+            </ul>
+        </div>
     </div>
 }
