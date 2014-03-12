@@ -1,5 +1,5 @@
 package models;
 
-public class Partner {
+public class Member {
     private String name;
 }
