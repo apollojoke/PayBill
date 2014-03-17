@@ -1,49 +1,41 @@
 package models;
 
-public class Bill {
-    private static int age = 1;
-    private String id;
-    private String name;
-    private String[] members;
+import play.data.validation.Constraints.Required;
+import play.db.ebean.Model;
 
+import javax.persistence.*;
+import java.util.List;
 
-    public Bill(String billName) {
-        age = ++age;
-        id = billName;
-        name = billName;
-        members = new String[0];
+@Entity
+public class Bill extends Model{
+    @Id
+    public Long id;
+    @Required
+    public String name;
+    @Required
+    @OneToMany(mappedBy="bill", cascade= CascadeType.ALL)
+    public List<Member> members;
+
+    public static Finder<Long, Bill> find = new Finder(Long.class, Bill.class);
+
+    public Bill(String billName, List<Member> memberList) {
+        this.name = billName;
+        this.members = memberList;
     }
 
-
-    public static int getAge() {
-        return age;
+    public Bill() {
     }
 
-    public String getName() {
-        return name;
+    public static List<Bill> all() {
+        return find.all();
     }
 
-    public static void setAge(int age) {
-        Bill.age = age;
+    public static void create(Bill bill) {
+        bill.save();
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public static void delete(Long id) {
+        find.ref(id).delete();
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String[] getMembers() {
-        return members;
-    }
-
-    public void setMembers(String[] members) {
-        this.members = members;
-    }
 }
