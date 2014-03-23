@@ -6,6 +6,7 @@
 GET         /                      controllers.Application.index()
 GET         /billDetail            controllers.Application.showBillDetail()
 POST        /createBill            controllers.Application.createBill()
+POST        /createRecord          controllers.Application.createRecord()
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file          controllers.Assets.at(path="/public", file)
 #GET         /assets/templetes/*file          controllers.Assets.at(path="/public", file)

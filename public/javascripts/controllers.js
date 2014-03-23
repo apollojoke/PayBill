@@ -41,3 +41,21 @@ paybillControllers.controller('CreateBillCtrl', ['$scope', '$http',
     }
 ]);
 
+paybillControllers.controller('CreateRecordCtrl', ['$scope', '$routeParams','$http',
+    function ($scope, $routeParams, $http) {
+        $scope.member_name = $routeParams.member;
+        $scope.bill_id = $routeParams.billId;
+        $scope.save = function(){
+            $scope.message = {
+                cost: $scope.cost,
+                subject: $scope.subject,
+            };
+            $http.post('/createRecord', angular.toJson($scope.message)).success(
+                function(){
+                    window.location = "#/billList/" + $scope.bill_id;
+                }
+            );
+        }
+    }
+]);
+

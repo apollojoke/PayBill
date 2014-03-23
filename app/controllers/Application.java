@@ -25,9 +25,7 @@ public class Application extends Controller {
         JsonNode data = request().body().asJson();
         String billName = data.get("name").textValue();
         ObjectMapper mapper = new ObjectMapper();
-        System.out.print("See members = " + data.get("members"));
         List<Member> members = mapper.convertValue(data.get("members"), mapper.getTypeFactory().constructCollectionType(List.class, Member.class));
-        System.out.print("Member Count:" + members.size());
         Bill bill = new Bill(billName, members);
         Bill.create(bill);
         return updateBillsJson();
@@ -35,7 +33,6 @@ public class Application extends Controller {
 
     private static Result updateBillsJson() throws IOException {
         JsonNode bills = Json.toJson(Bill.all());
-        System.out.print("Save it:" + Bill.all().get(0).members.size());
         FileWriter file = new FileWriter("/Users/twer/IdeaProjects/PayBill/public/bills/bills.json");
         file.write(bills.toString());
         file.flush();
@@ -43,21 +40,13 @@ public class Application extends Controller {
         return ok();
     }
 
-    private static void createBillJson(JsonNode data, String billName) {
-        try {
-
-            FileWriter file = new FileWriter("/Users/twer/IdeaProjects/PayBill/public/bills/" + billName + ".json");
-            file.write(data.toString());
-            file.flush();
-            file.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static Result showBillDetail() {
         String id = request().getQueryString("id");
         Bill bill = Bill.find.byId(Long.parseLong(id));
         return ok(Json.toJson(bill));
+    }
+
+    public static Result createRecord() {
+        return ok();
     }
 }

@@ -1,0 +1,22 @@
+<div class="title-bar">
+    <a ng-href="#/billList/{{bill_id}}"> <div class="back-button"></div> </a>
+    <div class="title">{{member_name}}</div>
+</div>
+<form name="recordForm" ng-submit="save()">
+    <ul class="nav nav-sidebar">
+        <li>
+            <div>Cost</div>
+            <input name="cost" ng-model="cost" required/>
+            <span ng-show="recordForm.cost.$error.required">please input the cost</span>
+        </li>
+        <li>
+            <div>Submit</div>
+            <input ng-model="subject"/>
+        </li>
+        <li>
+            <div>Date</div>
+            <input ng-model="date" type="date"/>
+        </li>
+        <input type="submit" value="Save"/>
+    </ul>
+</form>

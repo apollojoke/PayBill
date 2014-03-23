@@ -32,6 +32,14 @@
     float: left;
 }
 
+.back-button {
+    width: 198px;
+    height: 198px;
+    background-image: url(../images/back_arrow.jpg);
+    background-size: 100%;
+    float: left;
+}
+
 .nav-sidebar {
     margin-right: 2px;
     margin-left: 2px;
