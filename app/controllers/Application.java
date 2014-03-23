@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import models.Bill;
 import models.Member;
+import models.Record;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -47,6 +48,28 @@ public class Application extends Controller {
     }
 
     public static Result createRecord() {
+        JsonNode recordJson = request().body().asJson();
+        ObjectMapper mapper = new ObjectMapper();
+        Record record = mapper.convertValue(recordJson, Record.class);
+        Record.create(record);
+        //TODO:calculate money for every members
+        updateMoney(record);
         return ok();
+    }
+
+    private static void updateMoney(Record record) {
+        String payer = record.payer;
+        List<Member> members = Member.all();
+        for(Member member : members){
+            float money = 0;
+            if(member.name.equalsIgnoreCase(payer)){
+                money = record.cost *(members.size() - 1)/members.size();
+            }else {
+                money = -record.cost/members.size();
+            }
+            member.money = member.money + money;
+            member.save();
+        }
+
     }
 }

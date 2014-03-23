@@ -23,7 +23,8 @@ paybillControllers.controller('CreateBillCtrl', ['$scope', '$http',
         $scope.addMember = function () {
             if ($scope.new_member_name) {
                 $scope.member = {
-                    name: $scope.new_member_name
+                    name: $scope.new_member_name,
+                    money: 0.0
                 }
                 $scope.list.push(this.member);
                 $scope.new_member_name = '';
@@ -47,6 +48,8 @@ paybillControllers.controller('CreateRecordCtrl', ['$scope', '$routeParams','$ht
         $scope.bill_id = $routeParams.billId;
         $scope.save = function(){
             $scope.message = {
+                billId: $scope.bill_id,
+                payer: $scope.member_name,
                 cost: $scope.cost,
                 subject: $scope.subject,
             };

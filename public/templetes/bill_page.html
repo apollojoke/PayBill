@@ -3,6 +3,7 @@
 </div>
 <ul class="nav nav-sidebar">
     <li ng-repeat="member in members | orderBy:orderProp" class="bill-element"  >
-        <a ng-href="#/createRecord?member={{member.name}}&billId={{bill.id}}">{{member.name}}</a>
+        <a ng-href="#/createRecord?member={{member.name}}&billId={{bill.id}}" class="member-name">{{member.name}}</a>
+        <span>{{member.money}}</span>
     </li>
 </ul>
