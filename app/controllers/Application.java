@@ -34,7 +34,7 @@ public class Application extends Controller {
 
     private static Result updateBillsJson() throws IOException {
         JsonNode bills = Json.toJson(Bill.all());
-        FileWriter file = new FileWriter("/Users/twer/IdeaProjects/PayBill/public/bills/bills.json");
+        FileWriter file = new FileWriter("./public/bills/bills.json");
         file.write(bills.toString());
         file.flush();
         file.close();
