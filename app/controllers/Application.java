@@ -52,14 +52,16 @@ public class Application extends Controller {
         ObjectMapper mapper = new ObjectMapper();
         Record record = mapper.convertValue(recordJson, Record.class);
         Record.create(record);
-        //TODO:calculate money for every members
         updateMoney(record);
         return ok();
     }
 
     private static void updateMoney(Record record) {
         String payer = record.payer;
-        List<Member> members = Member.all();
+        Bill bill = Bill.find.byId(record.billId);
+        System.out.print(bill.id);
+        List<Member> members = bill.members;
+        System.out.print(members.size());
         for(Member member : members){
             float money = 0;
             if(member.name.equalsIgnoreCase(payer)){

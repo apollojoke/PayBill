@@ -28,4 +28,8 @@ public class Member extends Model {
     public static List<Member> all() {
         return find.all();
     }
+
+    public static List<Member> searchByBill(Bill bill) {
+        return find.where().like("bill", "%" + bill + "%").findList();
+    }
 }
