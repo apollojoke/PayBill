@@ -4,6 +4,7 @@
 
 # Home page
 GET         /                      controllers.Application.index()
+GET         /showBills             controllers.Application.showBills()
 GET         /billDetail            controllers.Application.showBillDetail()
 POST        /createBill            controllers.Application.createBill()
 POST        /createRecord          controllers.Application.createRecord()

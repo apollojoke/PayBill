@@ -1,22 +1,20 @@
 package models;
 
-import play.data.validation.Constraints.Required;
-import play.db.ebean.Model;
+import net.vz.mongodb.jackson.JacksonDBCollection;
+import net.vz.mongodb.jackson.ObjectId;
+import play.modules.mongodb.jackson.MongoDB;
 
-import javax.persistence.*;
+import javax.persistence.Id;
 import java.util.List;
 
-@Entity
-public class Bill extends Model{
+public class Bill{
     @Id
-    public Long id;
-    @Required
+    @ObjectId
+    public String id;
     public String name;
-    @Required
-    @OneToMany(mappedBy="bill", cascade= CascadeType.ALL)
     public List<Member> members;
 
-    public static Finder<Long, Bill> find = new Finder(Long.class, Bill.class);
+    private static JacksonDBCollection<Bill, String> coll = MongoDB.getCollection("bills", Bill.class, String.class);
 
     public Bill(String billName, List<Member> memberList) {
         this.name = billName;
@@ -27,15 +25,15 @@ public class Bill extends Model{
     }
 
     public static List<Bill> all() {
-        return find.all();
+        return Bill.coll.find().toArray();
     }
 
     public static void create(Bill bill) {
-        bill.save();
+        Bill.coll.save(bill);
     }
 
-    public static void delete(Long id) {
-        find.ref(id).delete();
+    public static Bill findById(String id) {
+        return Bill.coll.findOneById(id);
     }
 
 }

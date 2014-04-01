@@ -1,35 +1,34 @@
 package models;
 
-import play.data.validation.Constraints;
-import play.db.ebean.Model;
+import net.vz.mongodb.jackson.JacksonDBCollection;
+import net.vz.mongodb.jackson.ObjectId;
+import play.modules.mongodb.jackson.MongoDB;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import java.util.List;
 
-@Entity
-public class Member extends Model {
+public class Member{
     @Id
-    public Long id;
-    @Constraints.Required
+    @ObjectId
+    public String id;
     public String name;
     public float money;
 
-    @ManyToOne
-    private Bill bill;
-
-    public Member(String name) {
-        this.name = name;
-    }
-
-    public static Finder<Long, Member> find = new Finder(Long.class, Member.class);
+    private static JacksonDBCollection<Member, String> coll = MongoDB.getCollection("members", Member.class, String.class);
 
     public static List<Member> all() {
-        return find.all();
+        return Member.coll.find().toArray();
     }
 
     public static List<Member> searchByBill(Bill bill) {
-        return find.where().like("bill", "%" + bill + "%").findList();
+        return Member.coll.find().in("bill", bill).toArray();
+    }
+
+    public static void create(Member member) {
+        Member.coll.save(member);
+    }
+
+    public static void update(Member member) {
+        Member.coll.updateById(member.id, member);
     }
 }

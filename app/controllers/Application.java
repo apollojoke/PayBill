@@ -43,7 +43,7 @@ public class Application extends Controller {
 
     public static Result showBillDetail() {
         String id = request().getQueryString("id");
-        Bill bill = Bill.find.byId(Long.parseLong(id));
+        Bill bill = Bill.findById(id);
         return ok(Json.toJson(bill));
     }
 
@@ -58,7 +58,7 @@ public class Application extends Controller {
 
     private static void updateMoney(Record record) {
         String payer = record.payer;
-        Bill bill = Bill.find.byId(record.billId);
+        Bill bill = Bill.findById(record.billId);
         System.out.print(bill.id);
         List<Member> members = bill.members;
         System.out.print(members.size());
@@ -70,8 +70,12 @@ public class Application extends Controller {
                 money = -record.cost/members.size();
             }
             member.money = member.money + money;
-            member.save();
+            Member.update(member);
         }
 
+    }
+
+    public static Result showBills() {
+        return ok(Json.toJson(Bill.all()));
     }
 }

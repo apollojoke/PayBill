@@ -2,7 +2,7 @@ var paybillControllers = angular.module('paybillControllers', []);
 
 paybillControllers.controller('BillListCtrl', ['$scope', '$http',
     function ($scope, $http) {
-        $http.get('/assets/bills/bills.json').success(function (data) {
+        $http.get('/showBills').success(function (data) {
             $scope.bills = data;
         });
         $scope.orderProp = 'id';
@@ -51,7 +51,7 @@ paybillControllers.controller('CreateRecordCtrl', ['$scope', '$routeParams','$ht
                 billId: $scope.bill_id,
                 payer: $scope.member_name,
                 cost: $scope.cost,
-                subject: $scope.subject,
+                subject: $scope.subject
             };
             $http.post('/createRecord', angular.toJson($scope.message)).success(
                 function(){
