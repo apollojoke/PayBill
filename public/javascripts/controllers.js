@@ -18,11 +18,14 @@ paybillControllers.controller('BillCtrl', ['$scope', '$routeParams', '$http',
 
 paybillControllers.controller('CreateBillCtrl', ['$scope', '$http',
     function ($scope, $http) {
+        var memberId = 0;
         $scope.list = [];
         $scope.new_member_name = 'nancy';
         $scope.addMember = function () {
+            memberId += 1;
             if ($scope.new_member_name) {
                 $scope.member = {
+                    id: memberId,
                     name: $scope.new_member_name,
                     money: 0.0
                 }
@@ -45,11 +48,13 @@ paybillControllers.controller('CreateBillCtrl', ['$scope', '$http',
 paybillControllers.controller('CreateRecordCtrl', ['$scope', '$routeParams','$http',
     function ($scope, $routeParams, $http) {
         $scope.member_name = $routeParams.member;
+        $scope.member_id = $routeParams.memberId;
         $scope.bill_id = $routeParams.billId;
         $scope.save = function(){
             $scope.message = {
                 billId: $scope.bill_id,
                 payer: $scope.member_name,
+                payerId:$scope.member_id,
                 cost: $scope.cost,
                 subject: $scope.subject
             };

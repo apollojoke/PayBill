@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Member{
     @Id
-    @ObjectId
+//    @ObjectId
     public String id;
     public String name;
     public float money;

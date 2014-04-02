@@ -12,9 +12,10 @@ public class Record{
     public String id;
     public String billId;
     public String payer;
+    public int payerId;
     public int cost;
     public String subject;
-    public Date date;
+    //public Date date;
 
     private static JacksonDBCollection<Record, String> coll = MongoDB.getCollection("records", Record.class, String.class);
 
