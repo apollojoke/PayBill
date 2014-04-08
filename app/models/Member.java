@@ -10,7 +10,7 @@ import java.util.List;
 public class Member{
     @Id
     @ObjectId
-    public String id;
+//    public String id;
     public String name;
     public float money;
 
@@ -29,6 +29,6 @@ public class Member{
     }
 
     public static void update(Member member) {
-        Member.coll.updateById(member.id, member);
+        Member.coll.updateById(member.name, member);
     }
 }
