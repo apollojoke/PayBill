@@ -36,4 +36,7 @@ public class Bill{
         return Bill.coll.findOneById(id);
     }
 
+    public static void update(Bill bill) {
+        Bill.coll.updateById(bill.id, bill);
+    }
 }

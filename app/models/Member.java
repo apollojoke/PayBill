@@ -1,7 +1,6 @@
 package models;
 
 import net.vz.mongodb.jackson.JacksonDBCollection;
-import net.vz.mongodb.jackson.ObjectId;
 import play.modules.mongodb.jackson.MongoDB;
 
 import javax.persistence.Id;
@@ -9,8 +8,6 @@ import java.util.List;
 
 public class Member{
     @Id
-    @ObjectId
-//    public String id;
     public String name;
     public float money;
 

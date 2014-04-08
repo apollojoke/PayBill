@@ -70,8 +70,9 @@ public class Application extends Controller {
                 money = -record.cost/members.size();
             }
             member.money = member.money + money;
-            Member.update(member);
+            //Member.update(member);
         }
+        Bill.update(bill);
 
     }
 
