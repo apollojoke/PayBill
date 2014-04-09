@@ -1,33 +1,39 @@
 .container {
     position: absolute;
-    height: 100%;
     width: 100%;
     background-color: gray;
 }
 
 .bill-element {
-    background-color: white;
+    background-color: #ECF0F1;
     border-radius: 6px;
+    border-color: snow;
+    border-width: 3px;
     height: 180px;
     font-size: 60px;
 }
 
 .title-bar {
     height: 200px;
-    background-color: #f5f5f5;
+    background-color: #ECF0F1;
     border-bottom: 2px solid #696969;
 }
 
 .title{
+    float: left;
+    margin-left: 25%;
+    margin-top: 2%;
     font-size: 100px;
-    color: #2a6496;
+    color: #7F8C8D;
 }
 
 .add-button {
     width: 198px;
     height: 198px;
     border: none;
-    background-image: url(../images/add_icon.jpg);
+    background-image: url(../images/add.png);
+    background-color: #E67E22;
+    background-repeat: no-repeat;
     background-size: 100%;
     float: left;
 }
@@ -40,19 +46,30 @@
     float: left;
 }
 
-.nav-sidebar {
-    margin-right: 2px;
-    margin-left: 2px;
+.bill-list{
+    list-style: none;
+    padding: 0;
 }
-.nav-sidebar > li > a {
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 90px;
+
+.bill-row{
+    height: 150px;
+    background-color: #ECF0F1;
+    border-radius: 6px;
+    margin-bottom: 2px;
+    padding-left: 30px;
+    padding-top: 27px;
 }
-.nav-sidebar > .active > a {
-    color: #fff;
-    background-color: #428bca;
+
+.bill-row:hover{
+    background-color: #BDC3C7;
 }
+
+.bill-row a{
+    font-size: 60px;
+    color: #7F8C8D;
+}
+
+a:hover{ text-decoration:none;}
 
 .page-title {
 

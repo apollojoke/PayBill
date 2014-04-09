@@ -2,6 +2,7 @@
 
 var billApp = angular.module('billApp', [
     'ngRoute',
+    'ngTouch',
     'paybillControllers'
 ]);
 
