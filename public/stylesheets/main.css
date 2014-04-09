@@ -14,7 +14,7 @@
     border-radius: 6px;
     border-color: snow;
     border-width: 3px;
-    height: 180px;
+    height: 150px;
     font-size: 60px;
 }
 
@@ -93,4 +93,99 @@ a:hover{ text-decoration:none;}
 
 .member-name{
     float: left;
+}
+
+.listText{
+    font-size: 80px;
+    font-family: sans-serif;
+}
+
+.btn {
+    width: 200px;
+    height: 70px;
+    background-color: #E67E22;
+    margin-left: 15px;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.add-button {
+    width: 198px;
+    height: 198px;
+    border: none;
+    background-image: url(../images/add.png);
+    background-color: #E67E22;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+}
+
+.back-button {
+    width: 50%;
+    height: 198px;
+    background-image: url(../images/back_arrow.jpg);
+    background-size: 100%;
+    float: left;
+}
+
+.bill-list{
+    list-style: none;
+    padding: 0;
+}
+
+.bill-row{
+    height: 150px;
+    background-color: #ECF0F1;
+    border-radius: 6px;
+    margin-bottom: 2px;
+    padding-left: 30px;
+    padding-top: 27px;
+}
+
+.bill-row:hover{
+    background-color: #BDC3C7;
+}
+
+.bill-row a{
+    font-size: 60px;
+    color: #7F8C8D;
+}
+
+a:hover{ text-decoration:none;}
+
+.page-title {
+
+}
+
+.input {
+    width: 300px;
+    height: 70px;
+    font-size: 50px;
+    margin-left: 30px;
+}
+
+.add_member {
+    margin-top: 20px;
+}
+
+.member_list {
+    margin: 10px 0 0 10px;
+}
+
+.form-control {
+    border: 2px solid #bdc3c7;
+    color: #34495e;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 80px;
+    line-height: 2;
+    padding: 8px 12px;
+    height: 150px;
+    margin-left: 2%;
+    width: 96%;
+    -webkit-appearance: none;
+    border-radius:6px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
 }

@@ -1,14 +1,20 @@
 <div id="new-bill">
     <div class="title-bar">
-        <input type="text" id="new-bill-name" class="title" value="bill name" ng-model="new_bill_name"/>
+        <input type="text" placeholder="trip name" id="new-bill-name" class="title form-control" value="bill name" ng-model="new_bill_name"/>
     </div>
-    <div>
-        <label for="new_member_name">Member</label>
-        <input type="text" name="new_member_name" id="new_member_name" value="member name" ng-model="new_member_name"/>
-        <button ng-click="addMember()" id="create-bill">Add</button>
+    <div class="add_member">
+        <label for="new_member_name" class="listText">Member</label>
+        <input type="text" name="new_member_name" id="new_member_name" value="member name" ng-model="new_member_name" class="input"/>
+        <button ng-click="addMember()" id="create-bill" class="btn-primary btn">Add</button>
     </div>
-    <button ng-click="createBill()" class="create_button">Create</button>
-    <ul>
-        <li ng-repeat="item in list" class="bill-element">{{item}}</li>
+        <button ng-click="createBill()" class="btn-primary create_button btn">Create</button>
+
+    <ul class="member_list">
+        <li ng-repeat="item in list" class="bill-element">{{item.name}}</li>
     </ul>
+
+    <div class="footer ng-scope">
+        <div class="edit-button bottom-button">Edit</div>
+        <a ng-href="#/billList" href="#/billList"> <div class="back-button bottom-button">Back</div> </a>
+    </div>
 </div>
