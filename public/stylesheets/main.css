@@ -1,8 +1,13 @@
-.container {
-    position: absolute;
+.app-background{
     width: 100%;
     background-color: gray;
 }
+
+/*.container {*/
+    /*position: absolute;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
 
 .bill-element {
     background-color: #ECF0F1;
@@ -38,12 +43,26 @@
     float: left;
 }
 
-.back-button {
-    width: 198px;
+.footer{
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottom-button{
+    margin-top: 2px;
+    width: 50%;
     height: 198px;
-    background-image: url(../images/back_arrow.jpg);
-    background-size: 100%;
     float: left;
+    color: #ECF0F1;
+    font-size: 80px;
+    padding: 50px 0 0 170px;;
+}
+.back-button {
+    background-color: #696969;
+}
+.edit-button{
+    background-color: #E67E22;
 }
 
 .bill-list{
@@ -58,15 +77,12 @@
     margin-bottom: 2px;
     padding-left: 30px;
     padding-top: 27px;
+    font-size: 60px;
+    color: #7F8C8D;
 }
 
 .bill-row:hover{
     background-color: #BDC3C7;
-}
-
-.bill-row a{
-    font-size: 60px;
-    color: #7F8C8D;
 }
 
 a:hover{ text-decoration:none;}

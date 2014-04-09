@@ -1,9 +1,14 @@
 <div class="title-bar">
-    <a ng-href="#/newBill" style="display: block"> <div class="add-button" id="add-bill"></div> </a>
+    <a ng-href="#/newBill" style="display: block">
+        <div class="add-button" id="add-bill"></div>
+    </a>
+
     <div class="title">My Bills</div>
 </div>
-    <ul class="bill-list">
-        <li ng-repeat="bill in bills | orderBy:orderProp" class="bill-row"  >
-            <a ng-href="#/billList/{{bill.id}}">{{bill.name}}</a>
-        </li>
-    </ul>
+<ul class="bill-list">
+    <li ng-repeat="bill in bills | orderBy:orderProp">
+        <a ng-href="#/billList/{{bill.id}}">
+            <div class="bill-row">{{bill.name}}</div>
+        </a>
+    </li>
+</ul>
