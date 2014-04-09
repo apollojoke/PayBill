@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Member{
     @Id
+    public String id;
     public String name;
     public float money;
 
