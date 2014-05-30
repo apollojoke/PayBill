@@ -5,7 +5,7 @@
 
     <div class="title">My Bills</div>
 </div>
-<ul class="bill-list">
+<ul>
     <li ng-repeat="bill in bills | orderBy:orderProp">
         <a ng-href="#/billList/{{bill.id}}">
             <div class="bill-row">{{bill.name}}</div>

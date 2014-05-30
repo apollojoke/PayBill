@@ -20,7 +20,7 @@ paybillControllers.controller('CreateBillCtrl', ['$scope', '$http',
     function ($scope, $http) {
         var memberId = 0;
         $scope.list = [];
-        $scope.new_member_name = 'nancy';
+        $scope.new_member_name = "";
         $scope.addMember = function () {
             memberId += 1;
             if ($scope.new_member_name) {

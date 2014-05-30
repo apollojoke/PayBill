@@ -1,13 +1,18 @@
 <div class="title-bar">
     <div class="title">{{bill.name}}</div>
 </div>
-<ul class="nav nav-sidebar">
-    <li ng-repeat="member in members | orderBy:orderProp" class="bill-element"  >
-        <a ng-href="#/createRecord?memberId={{member.id}}&member={{member.name}}&billId={{bill.id}}" class="member-name">{{member.name}}</a>
-        <span>{{member.money}}</span>
+<ul>
+    <li ng-repeat="member in members | orderBy:orderProp">
+        <a ng-href="#/createRecord?memberId={{member.id}}&member={{member.name}}&billId={{bill.id}}">
+            <div class="bill-row">{{member.name}}
+                <span class="money">{{member.money}}</span>
+            </div>
+        </a>
     </li>
 </ul>
 <div class="footer">
     <div class="edit-button bottom-button">Edit</div>
-    <a ng-href="#/billList"> <div class="back-button bottom-button">Back</div> </a>
+    <a ng-href="#/billList">
+        <div class="back-button bottom-button">Back</div>
+    </a>
 </div>
