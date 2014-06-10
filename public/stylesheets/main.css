@@ -6,6 +6,11 @@
         background-color: gray;
         font-size: 1em;
     }
+    .footer{
+        position:fixed;
+        bottom: 0;
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 400px){
@@ -14,6 +19,11 @@
         margin-left: auto;
         margin-right: auto;
         background-color: gray;
+    }
+    .footer{
+        position:fixed;
+        bottom: 0;
+        width: 100%;
     }
 }
 
@@ -29,20 +39,20 @@
 
 .title-bar {
     width: 100%;
-    height: 102px;
+    height: 82px;
     background-color: #ECF0F1;
     border-bottom: 2px solid #696969;
 }
 
 .title{
     text-align: center;
-    font-size: 5em;
+    font-size: 4em;
     color: #7F8C8D;
 }
 
 .add-button {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: #E67E22;
     background-image: url("../images/add.png");
     background-repeat: no-repeat;
@@ -60,26 +70,12 @@
     height: 150px;
     width: 80px;
 }
-.footer{
-    position:fixed;
-    bottom: 0;
-    width: 100%;
-}
 
-.bottom-button{
-    margin-top: 2px;
-    width: 50%;
-    height: 198px;
-    float: left;
-    color: #ECF0F1;
-    font-size: 5em;
-    text-align: center;
-    padding: 50px;
-}
 .back-button {
     background-color: #696969;
 }
-.edit-button{
+.edit-button,
+.record_form .edit-button{
     background-color: #E67E22;
 }
 
@@ -97,6 +93,9 @@
     padding-top: 27px;
     font-size: 3em;
     color: #7F8C8D;
+}
+.record_form .bill-row{
+    padding-left: 0;
 }
 
 .empty-bill-row{
@@ -142,11 +141,11 @@ a:hover{ text-decoration:none;}
     font-family: sans-serif;
 }
 #add-new-member{
-    width: 15%;
-    height: 100%;
+    width: 25%;
+    height: 98%;
     background-color: #E67E22;
     background-image: url("../images/add.png");
-    margin-right: 5px;
+    margin: 0;
     border: none;
     float: right;
 }
@@ -154,14 +153,23 @@ a:hover{ text-decoration:none;}
     float: left;
     width: 75%;
     height: 98%;
+    margin: 0;
+    font-size: 2.5em;
 }
-
-.back-button {
+#new_bill_name{
+    font-size: 3em;
+}
+.bottom-button,
+.record_form .bottom-button{
     width: 50%;
-    height: 198px;
-    background-image: url(../images/back_arrow.jpg);
-    background-size: 100%;
+    height: 100px;
     float: left;
+    font-size: 3em;
+    text-align: center;
+    padding: 0;
+    color: #7F8C8D;
+    border: none;
+    padding-top: 20px;
 }
 
 ul{
@@ -192,7 +200,6 @@ a:hover{ text-decoration:none;}
 }
 
 .add_member {
-    margin-top: 20px;
     height: 78px;
     /*border: 1px solid #5e5e5e;*/
 }
@@ -200,13 +207,15 @@ a:hover{ text-decoration:none;}
 .member_list {
     float: left;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .record_form input{
+    width: 100%;
     display: block;
     border: none;
     background: none;
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
 }
 
@@ -217,3 +226,4 @@ input.title{
     width: 100%;
     background-color: #D6D8DA;
 }
+

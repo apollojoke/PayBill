@@ -37,9 +37,10 @@ paybillControllers.controller('CreateBillCtrl', ['$scope', '$http',
             $scope.new_bill_name = this.new_bill_name;
             $scope.message = {
                 name: $scope.new_bill_name,
-                members: $scope.list};
+                members: $scope.list
+            };
             $http.post("/createBill", angular.toJson($scope.message)).success(function (data) {
-                window.location = "/";
+                window.location = "#/";
             });
         }
     }
@@ -50,6 +51,7 @@ paybillControllers.controller('CreateRecordCtrl', ['$scope', '$routeParams','$ht
         $scope.member_name = $routeParams.member;
         $scope.member_id = $routeParams.memberId;
         $scope.bill_id = $routeParams.billId;
+        $scope.date = new Date();
         $scope.save = function(){
             $scope.message = {
                 billId: $scope.bill_id,

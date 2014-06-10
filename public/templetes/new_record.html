@@ -11,12 +11,14 @@
             <input ng-model="subject" placeholder="subject"/>
         </li>
         <li class="bill-row">
-            <input ng-model="date" type="date" placeholder="mm/dd/yyyy" class="date-picker"/>
+            <input ng-model="date" type="text" onfocus="(this.type='date')" class="date-picker" placeholder="{{date | date:'yyyy-MM-dd'}}"/>
         </li>
-        <li class="empty-bill-row"></li>
     </ul>
     <div class="footer ng-scope">
-        <div class="edit-button bottom-button">Edit</div>
-        <a ng-href="#/billList" href="#/billList"> <div class="back-button bottom-button">Back</div> </a>
+        <input type="submit" class="edit-button bottom-button" value="Save" />
+        <!--<div class="edit-button bottom-button">Save</div>-->
+        <a ng-href="#/billList" href="#/billList">
+            <div class="back-button bottom-button">Back</div>
+        </a>
     </div>
 </form>
